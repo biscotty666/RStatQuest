@@ -1,0 +1,6 @@
+"0","ggplot(data = pca.data, aes(x=X, y=Y, label=Sample)) +"
+"0","  geom_text() +"
+"0","  xlab(paste(""PC1 - "", pca.var.per[1], ""%"", sep = """")) +"
+"0","  ylab(paste(""PC2 - "", pca.var.per[2], ""%"", sep = """")) +"
+"0","  theme_bw() +"
+"0","  ggtitle(""My PCA Graph"")"

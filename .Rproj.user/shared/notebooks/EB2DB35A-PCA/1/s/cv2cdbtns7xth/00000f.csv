@@ -1,0 +1,5 @@
+"0","pca.var <- pca$sdev^2"
+"0","pca.var.per <- round(pca.var/sum(pca.var) * 100, 1)"
+"0","barplot(pca.var.per, main = ""Scree Plot"","
+"0","        xlab = ""Principle Componenet"","
+"0","        ylab = ""Percent Variation"")"

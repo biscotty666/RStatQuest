@@ -1,0 +1,5 @@
+"0","pca.data <- data.frame(Sample = rownames(pca$x),"
+"0","                       X = pca$x[,1],"
+"0","                       Y = pca$x[,2])"
+"0",""
+"0","head(pca.data)"
