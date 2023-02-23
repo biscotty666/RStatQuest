@@ -1,0 +1,43 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# Linear Regression in R
+
+## Create a dataset
+```{r}
+mouse.data <- data.frame(
+  weight = c(0.9, 1.8, 2.4, 3.5, 3.9, 4.4, 5.1, 5.6, 6.3),
+  size = c(1.4,2.6, 1.0, 3.7, 5.5, 3.2, 3.0, 4.9, 6.3)
+)
+mouse.data
+```
+```{r}
+plot(mouse.data$weight, mouse.data$size)
+```
+
+## Generate the regression
+
+`lm()` is used to fit linear models. It takes a formula and a dataset as required parameters. A line is `y = mx + c`. Below we set `weight` equal to `y` and `size` equal to `x`
+
+```{r}
+mouse.regression <- lm(size ~ weight, data = mouse.data)
+summary(mouse.regression)
+```
+- **Residuals**: Summary of residuals (distance from data to fitted line). Ideally they should be symmetrically distributed about the line
+- **Coefficients**: Estimate gives the slope and intercept for the fitted lined. Std. Error and t-value give information as to how the p-values are calculated.The final column gives the p-values, of which the slope is the important one and should be less than 0.05
+- **Signif. codes**: Provides a 'legend' for the mark after the p-value.In this case the * shows that the value is below 0.05. 
+- **Residual standard error**: The square root of the denominator in the formula for **F**
+- **Multiple R-squared**: This is $R^2$, in this case showing that 61% of variation in size is based on weight
+- **Adjusted R-squared**: $R^2$ scaled by the number of parameters in the model
+- **F-statistic**: The value for $F$ and the degrees of freedom
+- **p-value**: p-value
+```{r}
+plot(mouse.data$weight, mouse.data$size)
+abline(mouse.regression, col = 'blue')
+```
+
+
+
+
+
