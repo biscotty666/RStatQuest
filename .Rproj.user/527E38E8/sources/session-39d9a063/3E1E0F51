@@ -1,28 +1,28 @@
 {
-    "id": "93650A2D",
-    "path": "~/Learning/R/StatQuest/LinearRegression.Rmd",
-    "project_path": "LinearRegression.Rmd",
+    "id": "3E1E0F51",
+    "path": "~/Learning/R/StatQuest/MultipleRegression.Rmd",
+    "project_path": "MultipleRegression.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "1417077172",
     "contents": "",
     "dirty": false,
-    "created": 1677126914478.0,
+    "created": 1677129145415.0,
     "source_on_save": false,
-    "relative_order": 2,
+    "relative_order": 3,
     "properties": {
         "tempName": "Untitled1",
         "chunk_output_type": "inline",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "7,0",
-        "scrollLine": "0"
+        "cursorPosition": "58,0",
+        "scrollLine": "50"
     },
     "folds": "",
-    "lastKnownWriteTime": 1677128719,
+    "lastKnownWriteTime": 1677130843,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1677128719570,
+    "last_content_update": 1677130843280,
     "read_only": false,
     "read_only_alternatives": []
 }

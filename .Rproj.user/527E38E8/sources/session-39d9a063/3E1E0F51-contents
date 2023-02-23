@@ -1,0 +1,60 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# Multiple Regression
+
+Comparing multiple regression to single regression can identify whether the additional parameter(s) are important
+
+## Create the data
+```{r}
+mouse.data <- data.frame(
+  weight = c(0.9, 1.8, 2.4, 3.5, 3.9, 4.4, 5.1, 5.6, 6.3),
+  size = c(1.4,2.6, 1.0, 3.7, 5.5, 3.2, 3.0, 4.9, 6.3),
+  tail = c(0.7, 1.3, 0.7, 2.0, 3.6, 3.0, 2.9, 3.9, 4.0)
+)
+mouse.data
+```
+Consider a simple regression comparing weight and size
+```{r}
+plot(mouse.data$weight, mouse.data$size)
+```
+## Simple Regression
+
+There is an apparent relationship, so do a simple regression
+```{r}
+simple.regression <- lm(size ~ weight, data = mouse.data)
+summary(simple.regression)
+```
+The adjusted R-squred value is only useful in multple regression
+In this case the $R^2$ and p-value suggest weight is a useful predictor of size
+
+```{r}
+plot(mouse.data$weight, mouse.data$size)
+abline(simple.regression, col = "red", lwd = 2)
+```
+
+## Multiple Regression
+```{r}
+plot(mouse.data)
+```
+By not specifying x and y axes `plot()` generates a plot for each possible pair. This suggest that weight and tail are good predictors of size. It also suggests a strong relationship between weight and tail.
+
+Because of the strong correlation between weight and tail we might not need both since they may provide similar information
+
+Note the difference between C1R2 and C2R1. They display the same 
+relationship but with the axes switched
+```{r}
+multiple.regression <- lm(size ~ weight + tail, data = mouse.data)
+summary(multiple.regression)
+```
+$R^2$ and p-values look good. Now that we are using multiple variables 
+we should use the Adjusted R-squared value.
+
+In this case the **Coefficients** section is more interesting
+weight, eg. shows a comparison between the multiple regression and a simple regression only using tail. The high p-value suggests that adding weight does not significantly improve our results.
+Tail compares the multiple regression to a simple regression only using weight. This result suggests that adding tail significantly improves predictions.
+So while the multiple regression is better, the addition of weight may not be worth the trouble and cost.
+
+
+
